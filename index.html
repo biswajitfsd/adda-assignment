@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Biswajit Patra">
+  <title>ADDA | Home</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+  <!-- Header Starts from here -->
+  <section id="header">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">ADDA</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="./booking-history.html">Booking History</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <!-- Form Starts here -->
+  <section class="container-fluid main-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form__container">
+            <form class="selectForm" action="./booking-history.html" method="">
+              <div class="form-group">
+                <label for="userName">User Name: <span><a href="#" class="changeUser">Cahnge User Name</a></span></label>
+                <input type="text" class="form-control" name="userName" value="Biswajit Patra" readonly>
+              </div>
+              <div class="form-group">
+                <label for="facilitiesOptionsid">Selct facilities: </label>
+                <select class="facilitiesOptions form-control" name="facilitie" id="facilitiesOptionsId">
+                  <option value=""> Select from Facilities</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="datepicker">Select Date:</label>
+                <input type="text" name="date" class="form-control" id="datepicker" readonly>
+              </div>
+              <div class="col-md-12 time__container">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Start Time:</label>
+                    <select class="startTime form-control" name="startTime">
+                      <option value="">Select Start Time</option>
+                      <option value="10">10:00 am</option>
+                      <option value="11">11:00 am</option>
+                      <option value="12">12:00 noon</option>
+                      <option value="13">01:00 pm</option>
+                      <option value="14">02:00 pm</option>
+                      <option value="15">03:00 pm</option>
+                      <option value="16">04:00 pm</option>
+                      <option value="17">05:00 pm</option>
+                      <option value="18">06:00 pm</option>
+                      <option value="19">07:00 pm</option>
+                      <option value="20">08:00 pm</option>
+                      <option value="21">09:00 pm</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">End Time:</label>
+                    <select class="endTime form-control" name="endTime">
+
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group text-center">
+                <input type="submit" class="btn btn-info formSubmit" value="Submit" disabled>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script Tags gose here -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="./js/index.js" charset="utf-8"></script>
+</body>
+
+</html>
