@@ -170,11 +170,11 @@
   })
 
   // 2. Submit button Enable
-  $(document).on('click', '.startTime, .endTime', function(){
+  $(document).on('change', '.startTime, .endTime .facilitiesOptions', function(){
     var className = $(this)[0].className;
     className = className.split(" ");
     className = className[0];
-    if($('.startTime').val() !== "" && $('.endTime').val() !== "" && $("select").val() !== "") {
+    if($('.startTime').val() !== "" && $('.endTime').val() !== "" && $(".facilitiesOptions").val() !== "") {
       $(".formSubmit").removeAttr('disabled');
     } else {
       $(".formSubmit").attr('disabled', 'disabled');
@@ -192,11 +192,12 @@
         priceObj = new Booking(data);
         console.log("Full Object is ", priceObj);
         $('form').find(".priceDiv").remove();
-        $('form').prepend('<div class="form-group priceDiv"><label for="price">Total Price:</label><div>Rs '+priceObj.price+'</div></div>'
-        );
+        $('form').prepend('<div class="form-group priceDiv"><label for="price">Total Price:</label><div>Rs '+priceObj.price+'</div></div>');
+        $(".formSubmit").removeAttr('disabled');
       } else {
         $('form').find(".priceDiv").remove();
         alert("Please select a facilitie");
+        $(".formSubmit").attr('disabled', 'disabled');
       }
     }
   });
@@ -221,7 +222,7 @@
         localStorage.setItem("scheduled", JSON.stringify(scheduled));
         console.log(scheduled);
         alert("Booked, Rs. "+priceObj.price+" being charged");
-        location.reload();
+        window.location.href  = './booking-history.html';
       } else {
         alert("Booking Failed, Already Booked");
       }
