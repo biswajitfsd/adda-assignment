@@ -174,7 +174,7 @@
     var className = $(this)[0].className;
     className = className.split(" ");
     className = className[0];
-    if($('.startTime').val() !== "" && $('.endTime').val() !== "") {
+    if($('.startTime').val() !== "" && $('.endTime').val() !== "" && $("select").val() !== "") {
       $(".formSubmit").removeAttr('disabled');
     } else {
       $(".formSubmit").attr('disabled', 'disabled');
