@@ -125,13 +125,27 @@ $(document).ready(function() {
 		return true;
 	}
 
-	//5. To check time slot is available or not
+	// 5. Convert time to 24 hour time
+	function timConversion(val) {
+		val = val.split(/[\s:]+/);
+		if (val[val.length - 1] === 'pm') {
+			return parseInt(val[0]) + 12;
+		} else {
+			return parseInt(val[0]);
+		}
+	}
+
+	//6. To check time slot is available or not
 	function findObjectByKey(array, key, value) {
 		for (var i = 0; i < array.length; i++) {
+			var t1 = timConversion(array[i][key.second]);
+			var t2 = timConversion(value.startTime);
+			var t3 = timConversion(array[i][key.third]);
+			console.log(t1 + '  ' + t2 + ' ' + t3);
 			if (
 				array[i][key.forth] === value.facilitie &&
 				array[i][key.first] === value.date &&
-				array[i][key.second] === value.startTime
+				t1 <= t2 <= t3
 			) {
 				return false;
 			}
@@ -257,7 +271,7 @@ $(document).ready(function() {
 				localStorage.setItem('scheduled', JSON.stringify(scheduled));
 				console.log(scheduled);
 				alert('Booked, Rs. ' + priceObj.price + ' being charged');
-				window.location.href = './booking-history.html';
+				// window.location.href = './booking-history.html';
 			} else {
 				alert('Booking Failed, Already Booked');
 			}
